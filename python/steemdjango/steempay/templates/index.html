@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>steem payment module</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.min.css' %}">
+</head>
+
+<body style="background-color:rgb(236,236,236);">
+    <div class="login-clean">
+        <form method="post" action="/submit">
+            {% csrf_token %}
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration">
+                <i class="material-icons" style="color:rgb(71,244,244);font-size:50px;">account_balance_wallet</i>
+            </div>
+            <div class="form-group">
+                <strong class="d-block" style="margin-bottom:12px;margin-top:-10px;">Your Company®</strong>
+                <strong class="d-block" style="margin-bottom:12px;margin-top:-8px;">$ 1 SBD</strong>
+                <input class="form-control" type="email" name="email" placeholder="email" required pattern="*@*">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="from" name="from" placeholder="username" required style="margin-bottom: 12px">
+                <input class="form-control" type="wif" name="wif" placeholder="WIF" required minlength="51" maxlength="51">
+                <input class="form-control" type="memo" name="memo" placeholder="memo" style="margin:0px;margin-top:11px;">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(71,244,244);">Submit</button>
+            </div>
+            <a class="forgot" href="">click here for more</a>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
